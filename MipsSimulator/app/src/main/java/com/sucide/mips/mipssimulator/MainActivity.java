@@ -3,9 +3,12 @@ package com.sucide.mips.mipssimulator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     EditText i_rt;
     EditText i_offset;
     RecyclerView instructions_recycler_view;
+    LinearLayout r_type_layout ;
+    LinearLayout i_type_layout ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         i_rt = (EditText) findViewById(R.id.i_rt);
         i_offset = (EditText) findViewById(R.id.i_offset);
         instructions_recycler_view = (RecyclerView) findViewById(R.id.instruction_recycler_view);
+        r_type_layout = (LinearLayout) findViewById(R.id.r_type_layout);
+        i_type_layout = (LinearLayout) findViewById(R.id.i_type_layout);
 
         // initialize spinner
         String [] instruction_types = {"R","I"};
@@ -46,5 +53,27 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         instruction_type_spinner.setAdapter(adapter);
 
+        instruction_type_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if(instruction_type_spinner.getSelectedItem().toString().equals("R")){
+                    r_type_layout.setVisibility(View.VISIBLE);
+                    i_type_layout.setVisibility(View.GONE);
+                }
+                else if(instruction_type_spinner.getSelectedItem().toString().equals("I")){
+                    r_type_layout.setVisibility(View.GONE);
+                    i_type_layout.setVisibility(View.VISIBLE);
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                r_type_layout.setVisibility(View.GONE);
+                i_type_layout.setVisibility(View.GONE);
+
+            }
+        });
     }
 }
