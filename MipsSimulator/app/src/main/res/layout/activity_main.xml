@@ -16,7 +16,7 @@
 
        <Spinner
            android:id="@+id/instruction_type_spinner"
-           android:layout_width="150dp"
+           android:layout_width="270dp"
            android:layout_height="match_parent"
            android:layout_gravity="left"
            android:layout_margin="5dp"
@@ -25,9 +25,9 @@
        </Spinner>
 
        <Button
-           android:id="@+id/add_instruction_button"
            android:text="add"
-           android:layout_width="match_parent"
+           android:onClick="add_instruction_button"
+           android:layout_width="75dp"
            android:layout_height="35dp"
            />
 
@@ -36,32 +36,39 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginTop="5dp">
     <LinearLayout
         android:id="@+id/r_type_layout"
-        android:layout_margin="5dp"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="45dp"
+        android:layout_margin="5dp"
         android:orientation="horizontal"
         >
 
         <EditText
             android:id="@+id/r_op"
             android:layout_width="90dp"
-            android:layout_height="30dp" />
+            android:layout_height="40dp"
+            android:hint="Operation"/>
         <EditText
             android:id="@+id/r_rd"
             android:layout_width="90dp"
-            android:layout_height="30dp" />
+            android:layout_height="40dp"
+            android:hint="RD"/>
+
         <EditText
             android:id="@+id/r_rs"
             android:layout_width="90dp"
-            android:layout_height="30dp" />
+            android:layout_height="40dp"
+            android:hint="RS"/>
+
         <EditText
             android:id="@+id/r_rt"
             android:layout_width="90dp"
-            android:layout_height="30dp" />
+            android:layout_height="40dp"
+            android:hint="RT"/>
+
 
 
     </LinearLayout>
@@ -69,25 +76,33 @@
     <LinearLayout
         android:id="@+id/i_type_layout"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="45dp"
         android:orientation="horizontal"
         android:layout_margin="5dp">
         <EditText
             android:id="@+id/i_op"
             android:layout_width="90dp"
-            android:layout_height="30dp" />
+            android:layout_height="40dp"
+            android:hint="Operation"/>
+
         <EditText
             android:id="@+id/i_rs"
             android:layout_width="90dp"
-            android:layout_height="30dp" />
+            android:layout_height="40dp"
+            android:hint="RS"/>
+
         <EditText
             android:id="@+id/i_rt"
             android:layout_width="90dp"
-            android:layout_height="30dp" />
+            android:layout_height="40dp"
+            android:hint="RT"/>
+
         <EditText
             android:id="@+id/i_offset"
             android:layout_width="90dp"
-            android:layout_height="30dp" />
+            android:layout_height="40dp"
+            android:hint="OFFSET"/>
+
 
     </LinearLayout>
 

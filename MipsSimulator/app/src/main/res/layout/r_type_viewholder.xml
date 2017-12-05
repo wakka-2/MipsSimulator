@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="5dp"
+    android:layout_height="50dp">
+    <LinearLayout
+        android:id="@+id/r_type_layout_holder"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/r_op_holder"
+            android:layout_width="90dp"
+            android:layout_height="40dp"/>
+        <EditText
+            android:id="@+id/r_rd_holder"
+            android:layout_width="90dp"
+            android:layout_height="40dp"/>
+
+        <EditText
+            android:id="@+id/r_rs_holder"
+            android:layout_width="90dp"
+            android:layout_height="40dp"/>
+
+        <EditText
+            android:id="@+id/r_rt_holder"
+            android:layout_width="90dp"
+            android:layout_height="40dp"/>
+
+
+
+    </LinearLayout>
+</LinearLayout>
